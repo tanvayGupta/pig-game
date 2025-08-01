@@ -16,18 +16,21 @@ const newBtn = document.querySelector('.btn--new');
 var activePlayer, diceRoll, score;
 
 //Starting Conditions
-score0.textContent = 0;
-score1.textContent = 0;
-current0.textContent = 0;
-current1.textContent = 0;
-diceElement.classList.add('hidden');
-player0.classList.add('player--active');
-player1.classList.remove('player--active');
-player0.classList.remove('player--winner');
-player1.classList.remove('player--winner');
-rollBtn.disabled = false;
-holdBtn.disabled = false;
-activePlayer = 0;
+const initialization = function () {
+  score0.textContent = 0;
+  score1.textContent = 0;
+  current0.textContent = 0;
+  current1.textContent = 0;
+  diceElement.classList.add('hidden');
+  player0.classList.add('player--active');
+  player1.classList.remove('player--active');
+  player0.classList.remove('player--winner');
+  player1.classList.remove('player--winner');
+  rollBtn.disabled = false;
+  holdBtn.disabled = false;
+  activePlayer = 0;
+};
+initialization();
 
 //Game Logic
 rollBtn.addEventListener('click', function () {
@@ -74,18 +77,7 @@ holdBtn.addEventListener('click', function () {
 });
 
 newBtn.addEventListener('click', function () {
-  score0.textContent = 0;
-  score1.textContent = 0;
-  current0.textContent = 0;
-  current1.textContent = 0;
-  diceElement.classList.add('hidden');
-  player0.classList.add('player--active');
-  player1.classList.remove('player--active');
-  player0.classList.remove('player--winner');
-  player1.classList.remove('player--winner');
-  activePlayer = 0;
-  rollBtn.disabled = false;
-  holdBtn.disabled = false;
+  initialization();
 });
 
 //Additional Fns
